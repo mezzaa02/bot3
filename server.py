@@ -29,11 +29,11 @@ tienda_lock_file = tienda_file + ".lock"
 
 # Nombres de los archivos PDF
 pdf_names = [
+    "CHEQUERAS de Caballero.pdf",
     "RELOJES de Caballero.pdf",
-    "CARTERAS.pdf",
-    "RELOJES de Dama.pdf",
-    "MORRALES de Dama.pdf",
-    "MORRALES de Caballero.pdf"
+    "BILLETERAS de Dama.pdf",
+    "CHEQUERAS de Dama.pdf",
+    "CARTERAS.pdf"
 ]
 pdf_files = [os.path.join(BASE_PATH, pdf) for pdf in pdf_names]
 
@@ -52,6 +52,8 @@ tienda_video_files = [
 image_names = [
     "tienda1.jpeg",
     "tienda3.jpeg",
+    "mix1.png",
+    "mix2.png",
     "tienda2.jpeg"
 ]
 image_files = [os.path.join(BASE_PATH, img) for img in image_names]
@@ -90,11 +92,11 @@ def precodificar_archivos():
         encoded_pdf = encode_file_to_base64(pdf_filename)
         encoded_pdfs[pdf_name] = encoded_pdf
 
-    for video_filename in welcome_video_files + tienda_video_files:
-        video_name = os.path.basename(video_filename)
-        print(f"Precargando y codificando video {video_name}")
-        encoded_video = encode_file_to_base64(video_filename)
-        encoded_videos[video_name] = encoded_video
+    #for video_filename in welcome_video_files + tienda_video_files:
+    #    video_name = os.path.basename(video_filename)
+    #    print(f"Precargando y codificando video {video_name}")
+    #    encoded_video = encode_file_to_base64(video_filename)
+    #    encoded_videos[video_name] = encoded_video
 
     for image_filename, image_name in zip(image_files, image_names):
         print(f"Precargando y codificando imagen {image_name}")
@@ -606,9 +608,8 @@ def send_precio_message(sender):
     try:
         # Enviar los mensajes solicitados
         messages = [
-            "⌚ *Por DOCENA* relojes *50 soles*",
-            "¿Cuántas unidades desea llevar? 🙌☺️",
-            "70 soles le podemos dejar *por unidad*"
+            "Puede combinar para completar sus *12 PRODUCTOS* 🛒 y llevar *cada uno* a estos precios 😊🛍️",
+            "¿Cuántas unidades desea llevar? 🙌☺️"
         ]
         for message in messages:
             send_message(sender, message)
@@ -664,10 +665,22 @@ def send_welcome_pdfs_videos_to_client(sender):
             time.sleep(1)
 
         # Enviar videos
-        for video_filename in welcome_video_files:
-            video_name = os.path.basename(video_filename)
-            send_video(sender, video_name)
-            time.sleep(1)
+        #for video_filename in welcome_video_files:
+        #    video_name = os.path.basename(video_filename)
+        #    send_video(sender, video_name)
+        #    time.sleep(1)
+
+        # Enviar MIX_1
+        image4_name = "mix1.png"
+        image4_caption = "▫️⌚Relojes: *50 soles*\n▫️👜Carteras: *50 soles*\n▫️💼Morrales: *50 soles*"
+        send_image(sender, image4_name, image4_caption)
+        time.sleep(1)
+
+        # Enviar MIX_2
+        image5_name = "mix2.png"
+        image5_caption = "▫️ Billeteras: *20 soles*\n▫️👝Chequeras: *30 soles*\n▫️👛Monederos: *15 soles*\n▫️Correas: *30 soles*"
+        send_image(sender, image5_name, image5_caption)
+        time.sleep(1)
 
         mark_as_sent(sender)
     finally:
