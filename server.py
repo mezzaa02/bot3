@@ -31,6 +31,7 @@ tienda_lock_file = tienda_file + ".lock"
 pdf_names = [
     "CHEQUERAS de Caballero.pdf",
     "RELOJES de Caballero.pdf",
+    "MONEDEROS de Dama.pdf",
     "BILLETERAS de Dama.pdf",
     "CHEQUERAS de Dama.pdf",
     "CARTERAS.pdf"
@@ -635,10 +636,10 @@ def send_tienda_messages(sender):
         time.sleep(1)
 
         # Enviar el video con su caption
-        video_name = "impuestos.mp4"
-        video_caption = """🤩Trabajamos en la *Zona Franca del Perú* pues es zona *LIBRE DE IMPUESTOS* 🥳✨🫱🏻‍🫲🏻"""
-        send_video(sender, video_name, caption=video_caption)
-        time.sleep(1)
+        #video_name = "impuestos.mp4"
+        #video_caption = """🤩Trabajamos en la *Zona Franca del Perú* pues es zona *LIBRE DE IMPUESTOS* 🥳✨🫱🏻‍🫲🏻"""
+        #send_video(sender, video_name, caption=video_caption)
+        #time.sleep(1)
 
         # Enviar la 3er imagen con su caption
         image3_name = "tienda3.jpeg"
@@ -672,13 +673,13 @@ def send_welcome_pdfs_videos_to_client(sender):
 
         # Enviar MIX_1
         image4_name = "mix1.png"
-        image4_caption = "▫️⌚Relojes: *50 soles*\n▫️👜Carteras: *50 soles*\n▫️💼Morrales: *50 soles*"
+        image4_caption = "💚Precios *POR DOCENA*\n▫️⌚Relojes: *50 soles*\n▫️👜Carteras: *50 soles*\n▫️💼Morrales: *50 soles*"
         send_image(sender, image4_name, image4_caption)
         time.sleep(1)
 
         # Enviar MIX_2
         image5_name = "mix2.png"
-        image5_caption = "▫️ Billeteras: *20 soles*\n▫️👝Chequeras: *30 soles*\n▫️👛Monederos: *15 soles*\n▫️Correas: *30 soles*"
+        image5_caption = "💚Precios *POR DOCENA*\n▫️ Billeteras: *20 soles*\n▫️👝Chequeras: *30 soles*\n▫️👛Monederos: *15 soles*\n▫️Correas: *30 soles*"
         send_image(sender, image5_name, image5_caption)
         time.sleep(1)
 
