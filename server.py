@@ -609,7 +609,7 @@ def send_precio_message(sender):
         # Enviar los mensajes solicitados
         messages = [
             "Puede combinar para completar sus *12 PRODUCTOS* 🛒 y llevar *cada uno* a estos precios 😊🛍️",
-            "¿Cuántas unidades desea llevar? 🙌☺️"
+            "🔹¿Cuántas unidades desea llevar? 🙌☺️"
         ]
         for message in messages:
             send_message(sender, message)
@@ -642,7 +642,7 @@ def send_tienda_messages(sender):
 
         # Enviar la 3er imagen con su caption
         image3_name = "tienda3.jpeg"
-        image3_caption = "Contraentrega en toda Tacna, entregamos personalmente a domicilio"
+        image3_caption = "💛Contraentrega en toda Tacna, entregamos personalmente a domicilio"
         send_image(sender, image3_name, image3_caption)
         time.sleep(1)
 
