@@ -62,7 +62,7 @@ image_files = [os.path.join(BASE_PATH, img) for img in image_names]
 welcome_messages = [
     "👋💚 *Buenas* 🤗",
     "Somos empresa 💼 *RUC: 20610868577* Registrada desde *1993* 🥳⭐⭐⭐⭐⭐",
-    "✅🩷🩵 Precios *POR DOCENA*\n(si lleva 12 productos *en TOTAL* ) 🛒✨\n▫️⌚Relojes: *50 soles*\n▫️👜Carteras: *50 soles*\n▫️💼Morrales: *50 soles*\n▫️ Billeteras: *20 soles*\n▫️👛Monederos: *15 soles*\n▫️👝Chequeras: *30 soles*\n▫️Correas: *30 soles*"
+    "✅🩷🩵 Precios *POR DOCENA*\n(puede surtir 12 productos *en TOTAL* ) 🛒✨\n▫️⌚Relojes: *50 soles*\n▫️👜Carteras: *50 soles*\n▫️💼Morrales: *50 soles*\n▫️ Billeteras: *20 soles*\n▫️👛Monederos: *15 soles*\n▫️👝Chequeras: *30 soles*\n▫️Correas: *30 soles*"
 ]
 
 # Texto para el primer video
@@ -608,7 +608,7 @@ def send_precio_message(sender):
     try:
         # Enviar los mensajes solicitados
         messages = [
-            "Puede combinar para completar sus *12 PRODUCTOS* 🛒 y llevar *cada uno* a estos precios 😊🛍️",
+            "Puede surtir para completar sus *12 PRODUCTOS* 🛒 y llevar *cada uno* a estos precios 😊🛍️",
             "🔹¿Cuántas unidades desea llevar? 🙌☺️"
         ]
         for message in messages:
