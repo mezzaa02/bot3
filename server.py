@@ -15,7 +15,7 @@ app = Flask(__name__)
 BASE_PATH = "./"
 
 # Nueva ruta para los archivos de datos
-DATA_PATH = os.path.join(BASE_PATH, "datos")
+DATA_PATH = os.path.join(BASE_PATH, "datos2")
 
 # Archivos que contienen los números que ya han recibido los mensajes
 sent_numbers_file = os.path.join(DATA_PATH, "sent_numbers.txt")
