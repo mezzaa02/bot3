@@ -29,6 +29,7 @@ tienda_lock_file = tienda_file + ".lock"
 
 # Nombres de los archivos PDF
 pdf_names = [
+    "BILLETERAS de Caballero.pdf",
     "CHEQUERAS de Caballero.pdf",
     "RELOJES de Caballero.pdf",
     "BILLETERAS de Dama.pdf",
